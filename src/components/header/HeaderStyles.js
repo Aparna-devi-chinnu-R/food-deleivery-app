@@ -5,7 +5,7 @@ export default makeStyles(() => ({
         position: "fixed",
         top: 0,
         left: 0,
-        width: "100%",
+        width: "80%",
         height: "5rem",
         backgroundColor: "#8a2b06",
         color: "white",
