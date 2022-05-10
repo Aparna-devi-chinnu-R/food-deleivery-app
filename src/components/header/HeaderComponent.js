@@ -1,7 +1,4 @@
 import styles from "./HeaderStyles"
-import {Fragment, useState} from "react";
-import {Button, Grid} from "@material-ui/core";
-import {ShoppingCart} from '@material-ui/icons';
 import CartButton from "./CartButton";
 
 const HeaderComponent = () => {

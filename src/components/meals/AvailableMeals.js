@@ -10,7 +10,7 @@ const AvailableMeals = () => {
         <>
             <div className={classes.mealCard}>
                 {mealItemsList.map(mealItem =>
-                    <MealCard mealItem={mealItem}/>
+                    <MealCard key={mealItem.id} mealItem={mealItem}/>
                 )}
             </div>
         </>
