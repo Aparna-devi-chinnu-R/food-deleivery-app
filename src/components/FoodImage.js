@@ -1,14 +1,12 @@
 import foodImage from "../asserts/istockphoto-1175505781-612x612.webp";
+import styles from "./FoodImgaeStyles"
 
 const FoodImage = () => {
+
+    const classes = styles();
     return (
         <>
-            <div>
-                <img src={foodImage} alt="Tasty Food image !!" style={{width: "100%",
-                    height: "25rem",
-                    zIndex: "0",
-                    overflow: "hidden"}}/>
-            </div>
+            <img src={foodImage} alt="Tasty Food image !!" className={classes.image}/>
         </>
     )
 }
