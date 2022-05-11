@@ -2,11 +2,12 @@ import {ShoppingCart} from "@material-ui/icons";
 import {Button} from "@material-ui/core";
 import styles from "./CartButtonStyles"
 
-const CartButton = () => {
+const CartButton = ({handleCartButtonClick}) => {
+
     const classes = styles();
     return (
         <>
-            <Button className={classes.button}>
+            <Button className={classes.button} onClick={handleCartButtonClick}>
                     <span>
                         <ShoppingCart/>
                     </span>
