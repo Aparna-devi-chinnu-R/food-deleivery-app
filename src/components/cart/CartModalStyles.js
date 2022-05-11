@@ -2,6 +2,7 @@ import {makeStyles} from "@material-ui/core";
 
 export default makeStyles(() => ({
     cartModal: {
+        position:"relative",
         marginLeft : "39%",
         marginTop:"6.4%",
         width: "40%",

@@ -8,10 +8,15 @@ const CartModal = ({isOpen}) => {
     const listOfMealsInCart = useSelector(store => store.mealInCart);
     return (
         <>
-            <Modal open={isOpen} className={classes.cartModal}>
-                <div>
-                    {listOfMealsInCart.map(item =>
-                        <CartItem item={item}/>
+            <Modal open={isOpen}
+                   className={classes.cartModal}
+                   aria-labelledby="simple-modal-title"
+                   aria-describedby="simple-modal-description"
+                   disableBackdropClick
+            >
+                <div style={{position: "absolute"}}>
+                    {listOfMealsInCart.map((item,index) =>
+                        <CartItem key={index} item={item}/>
                     )}
                 </div>
             </Modal>

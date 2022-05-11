@@ -2,6 +2,7 @@ import styles from "./HeaderStyles"
 import CartButton from "./CartButton";
 import {useState} from "react";
 import CartModal from "../cart/CartModal";
+import ReactDOM from 'react-dom';
 
 const HeaderComponent = () => {
     const classes = styles();
@@ -17,7 +18,7 @@ const HeaderComponent = () => {
                 <h1 >ReactMeals</h1>
                 <CartButton handleCartButtonClick={handleCartButtonClick}/>
             </header>
-            <CartModal isOpen={isCartButtonClicked}/>
+            {ReactDOM.createPortal(<CartModal isOpen={isCartButtonClicked}/>,document.getElementById("cartModal"))}
         </>
     );
 }
