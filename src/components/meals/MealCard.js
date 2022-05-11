@@ -5,7 +5,7 @@ const MealCard = ({mealItem}) => {
     let dispatch = useDispatch();
 
     const addItemToCart = () => {
-        dispatch(addMeal(mealItem));
+        dispatch(addMeal({...mealItem,count:1}));
     }
 
     return (
