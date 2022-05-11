@@ -1,5 +1,4 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {logDOM} from "@testing-library/react";
 
 const initialState = [];
 
@@ -13,7 +12,7 @@ const addMealToCart = (state, newItem) => {
             sameItem = item;
         }
     })
-    count = sameItem ? sameItem.count +1 : newItem.count  ;
+    count = sameItem ? (parseInt(sameItem.count) + parseInt(newItem.count)) : newItem.count  ;
 
     state[position] = {...newItem,count:count};
 

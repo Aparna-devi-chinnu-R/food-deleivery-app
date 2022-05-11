@@ -1,11 +1,19 @@
 import {useDispatch} from "react-redux";
 import {addMeal} from "../../redux/reducer/mealInCartReducer";
+import {useState} from "react";
 
 const MealCard = ({mealItem}) => {
     let dispatch = useDispatch();
+    const [amount,setAmount] = useState(1);
 
     const addItemToCart = () => {
-        dispatch(addMeal({...mealItem,count:1}));
+        dispatch(addMeal({...mealItem,count:amount}));
+    }
+
+    const handleAmountChange = (event) => {
+         if(event.target.value >0 && event.target.value<=5) {
+             setAmount(event.target.value);
+         }
     }
 
     return (
@@ -19,7 +27,7 @@ const MealCard = ({mealItem}) => {
                 }}>
                     <div>{mealItem.name}</div>
                     <div style={{display: "flex"}}>
-                        Amount <div style={{border: "1px solid grey", marginLeft: "5px", marginBottom: "5px"}}>3</div>
+                        Amount <input type="number" min="1" max="5" style={{size:"10px",marginLeft:"5px"}} onChange={handleAmountChange} value={amount}/>
                     </div>
                 </div>
                 <div style={{display: "flex", justifyContent: "space-between", paddingBottom: "5px"}}>
