@@ -1,6 +1,7 @@
 import {Modal} from "@material-ui/core";
 import {useSelector} from "react-redux";
 import styles from "./CartModalStyles";
+import CartItem from "./CartItem";
 
 const CartModal = ({isOpen}) => {
     const classes = styles();
@@ -10,11 +11,7 @@ const CartModal = ({isOpen}) => {
             <Modal open={isOpen} className={classes.cartModal}>
                 <div>
                     {listOfMealsInCart.map(item =>
-                        <div>
-                            <div>{item.name}</div>
-                            <div>{item.price}</div>
-                            <div>{item.count}</div>
-                        </div>
+                        <CartItem item={item}/>
                     )}
                 </div>
             </Modal>
