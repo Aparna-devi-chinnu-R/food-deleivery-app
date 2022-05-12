@@ -10,7 +10,7 @@ const CartItem = ({item}) => {
 
             </div>
             <div style={{display: "flex"}}>
-                <div style={{color: "darkred"}}>{item.price}</div>
+                <div style={{color: "darkred"}}>Rs : {item.price}</div>
                 <div style={{border: "1px solid black", marginLeft: "10px", padding: "0 5px"}}>x{item.count}</div>
             </div>
         </div>
