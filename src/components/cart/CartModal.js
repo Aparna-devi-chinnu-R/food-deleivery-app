@@ -24,14 +24,19 @@ const CartModal = ({isOpen}) => {
             <Modal open={isOpen}
                    className={classes.cartModal}
             >
-                <div>
-                    {listOfMealsInCart.map((item, index) =>
-                        <CartItem key={index} item={item}/>
-                    )}
+                <div >
+                    <div>
+                        {listOfMealsInCart.map((item, index) =>
+                            <CartItem key={index} item={item}/>
+                        )}
+                    </div>
 
-                    <div style={{marginTop: "10px", fontWeight: "bold",justifyContent:"space-between",display:"flex"}}>
-                        <div style={{marginLeft:"40px"}}>Total price :</div>
-                        <div style={{marginRight:"40px"}}>Rs : {totalRupeesInCartRef.current}</div>
+                    <div style={{
+                        fontWeight: "bold",
+                        display: "flex",
+                    }}>
+                        <div style={{marginLeft: "20px"}}>Total price :</div>
+                        <div style={{marginLeft: "230px"}}>Rs : {totalRupeesInCartRef.current}</div>
                     </div>
                 </div>
 

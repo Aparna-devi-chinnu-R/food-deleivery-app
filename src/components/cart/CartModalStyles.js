@@ -5,7 +5,7 @@ export default makeStyles(() => ({
         marginLeft : "39%",
         marginTop:"3.8%",
         width: "40%",
-        height: "30%",
+        height: "40%",
         backgroundColor: "white",
         padding: "1rem",
         borderRadius: "14px",
@@ -13,6 +13,5 @@ export default makeStyles(() => ({
         border: "5px solid black",
         zIndex: "30",
         overflowY:"auto"
-
     }
 }))

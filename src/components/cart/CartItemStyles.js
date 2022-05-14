@@ -5,7 +5,7 @@ export default makeStyles(() => ({
     cartItem: {
         borderBottom: "2px solid \t#800000",
         padding: "10px",
-        borderRadius: "5px"
+        borderRadius: "5px",
     },
 
     cartButtonBox: {
