@@ -15,13 +15,19 @@ const HeaderComponent = () => {
     const handleCancel = () => {
         setIsCartButtonClicked(false);
     }
+
+    const handleOrder = () => {
+        console.log("ordering");
+        setIsCartButtonClicked(false);
+    }
+
     return (
         <>
             <header className={classes.header}>
                 <h1 >ReactMeals</h1>
                 <CartButton handleCartButtonClick={handleCartButtonClick}/>
             </header>
-            {ReactDOM.createPortal(<CartModal isCartOpen={isCartButtonClicked} handleCancel={handleCancel}/>,document.getElementById("cartModal"))}
+            {ReactDOM.createPortal(<CartModal isCartOpen={isCartButtonClicked} handleCancel={handleCancel} handleOrder={handleOrder}/>,document.getElementById("cartModal"))}
         </>
     );
 }

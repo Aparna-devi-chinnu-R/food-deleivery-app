@@ -4,7 +4,7 @@ import styles from "./CartModalStyles";
 import CartItem from "./CartItem";
 import {useEffect, useRef} from "react";
 
-const CartModal = ({isCartOpen,handleCancel}) => {
+const CartModal = ({isCartOpen, handleCancel, handleOrder}) => {
 
 
     const classes = styles();
@@ -27,9 +27,9 @@ const CartModal = ({isCartOpen,handleCancel}) => {
                    aria-labelledby="simple-modal-title"
                    aria-describedby="simple-modal-description"
 
-             >
+            >
                 <div id={"major div"} className={classes.cartModal}>
-                    <div id = {"minor div"}>
+                    <div id={"minor div"}>
                         {listOfMealsInCart.map((item, index) =>
                             <CartItem key={index} item={item}/>
                         )}
@@ -38,15 +38,15 @@ const CartModal = ({isCartOpen,handleCancel}) => {
                     <div style={{
                         fontWeight: "bold",
                         display: "flex",
-                        padding:"30px"
+                        padding: "30px"
                     }}>
                         <div style={{marginLeft: "20px"}}>Total price :</div>
                         <div style={{marginLeft: "230px"}}>Rs : {totalRupeesInCartRef.current}</div>
 
                     </div>
-                    <div style={{textJustify:"space-between",textAlign:"end"}}>
-                        <Button style={{borderRadius:"20px",border:"1px solid darkred",margin:"10px"}} onClick={handleCancel}>Cancel</Button>
-                        <Button style={{borderRadius:"20px",backgroundColor:"darkred",color:"white",margin:"10px"}}>Order</Button>
+                    <div style={{textJustify: "space-between", textAlign: "end"}}>
+                        <Button className={classes.cancelButton} onClick={handleCancel}>Cancel</Button>
+                        <Button className={classes.orderButton} onClick={handleOrder}>Order</Button>
                     </div>
                 </div>
 
