@@ -18,8 +18,8 @@ const CartItem = ({item}) => {
             <div style={{fontWeight: "bold", display: "flex", justifyContent: "space-between"}}>
                 <div>{item.name}</div>
                 <div className={classes.cartButtonBox}>
-                    <button className={classes.cartButton} onClick={handleIncrement}>+</button>
-                    <button className={classes.cartButton} onClick={handleDecrement}>-</button>
+                    <button className={classes.cartButton} onClick={handleIncrement} disabled={item.count>=5}>+</button>
+                    <button className={classes.cartButton} onClick={handleDecrement} disabled={item.count<=0}>-</button>
                 </div>
             </div>
             <div style={{display: "flex"}}>

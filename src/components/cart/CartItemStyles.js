@@ -22,7 +22,8 @@ export default makeStyles(() => ({
         backgroundColor:"white",
         '&:hover':{
             backgroundColor: "#e2e2e2"
-        }
+        },
+        fontWeight:"bold"
     },
 
     count: {
