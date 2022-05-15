@@ -9,8 +9,11 @@ const HeaderComponent = () => {
     const [isCartButtonClicked,setIsCartButtonClicked] = useState(false);
 
     const handleCartButtonClick = () => {
-        console.log("inside")
         setIsCartButtonClicked(true);
+    }
+
+    const handleCancel = () => {
+        setIsCartButtonClicked(false);
     }
     return (
         <>
@@ -18,7 +21,7 @@ const HeaderComponent = () => {
                 <h1 >ReactMeals</h1>
                 <CartButton handleCartButtonClick={handleCartButtonClick}/>
             </header>
-            {ReactDOM.createPortal(<CartModal isOpen={isCartButtonClicked}/>,document.getElementById("cartModal"))}
+            {ReactDOM.createPortal(<CartModal isCartOpen={isCartButtonClicked} handleCancel={handleCancel}/>,document.getElementById("cartModal"))}
         </>
     );
 }
