@@ -17,7 +17,12 @@ export default makeStyles(() => ({
 
     cartButton: {
         border: "1px solid \t#800000",
-        padding: "2px 15px"
+        padding: "2px 15px",
+        cursor:"pointer",
+        backgroundColor:"white",
+        '&:hover':{
+            backgroundColor: "#e2e2e2"
+        }
     },
 
     count: {

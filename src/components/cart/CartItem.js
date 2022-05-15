@@ -1,14 +1,25 @@
 import styles from './CartItemStyles';
+import {useDispatch} from "react-redux";
+import {decrementCount, incrementCount} from "../../redux/reducer/mealInCartReducer";
 
 const CartItem = ({item}) => {
     const classes = styles();
+    let dispatch = useDispatch();
+
+    const handleIncrement = () => {
+        dispatch(incrementCount(item));
+    }
+
+    const handleDecrement = () => {
+        dispatch(decrementCount(item));
+    }
     return (
         <div className={classes.cartItem}>
             <div style={{fontWeight: "bold", display: "flex", justifyContent: "space-between"}}>
                 <div>{item.name}</div>
                 <div className={classes.cartButtonBox}>
-                    <div className={classes.cartButton}>+</div>
-                    <div className={classes.cartButton}>-</div>
+                    <button className={classes.cartButton} onClick={handleIncrement}>+</button>
+                    <button className={classes.cartButton} onClick={handleDecrement}>-</button>
                 </div>
             </div>
             <div style={{display: "flex"}}>
