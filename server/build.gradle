@@ -1,6 +1,10 @@
 plugins {
     id 'java'
     id "org.flywaydb.flyway" version "6.4.3"
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+
+
 
 
 }
@@ -15,6 +19,10 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'org.springframework.data:spring-data-jpa:2.7.0'
+    implementation 'org.springframework:spring-core:5.3.20'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 }
 
 test {
